@@ -26,7 +26,7 @@ public class StreamDemo {
         }
 
         List<Integer> beforeList = list.stream().sorted().collect(Collectors.toList());
-        System.out.println("======原始list:"+beforeList.toString());
+        System.out.println("======串行原始list:"+beforeList.toString());
 
         List<Integer> distinctList = list.stream().distinct().sorted().collect(Collectors.toList());
         System.out.println("======去重后list:"+distinctList.toString());
@@ -34,5 +34,22 @@ public class StreamDemo {
         List<Integer> afterList = list.stream().filter(li->li>10).sorted().collect(Collectors.toList());
         System.out.println("======过滤后list:"+afterList.toString());
 
+
+        //并行及串行对比
+        list.clear();
+        int seed = 1000000;
+        for (int i = 0; i < seed; i++) {
+            list.add(rand.nextInt(seed));
+        }
+
+        long t0 = System.currentTimeMillis();
+        list.stream().sorted().collect(Collectors.toList());
+        long t1 = System.currentTimeMillis();
+        System.out.println("======串行排序耗时"+(t1-t0)+"ms");
+
+        long t2 = System.currentTimeMillis();
+        list.parallelStream().sorted().collect(Collectors.toList());
+        long t3 = System.currentTimeMillis();
+        System.out.println("======并行排序耗时"+(t3-t2)+"ms");
     }
 }
