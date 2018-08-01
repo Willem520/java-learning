@@ -7,7 +7,7 @@ package willem.weiyu.interfaceMethod;
  * 函数式接口允许定义静态方法
  * 函数式接口允许定义java.lang.Object里的public方法
  * @create 2018/8/1 16:01
- * @since 1.0.0
+ * @since jdk1.8
  */
 public class FunctionalInterfaceDemo {
 

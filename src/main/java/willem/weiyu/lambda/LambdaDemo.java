@@ -21,7 +21,7 @@ public class LambdaDemo {
         new Thread(() ->{
             int count = 0;
             do {
-                System.out.println("******java lambda"+count++);
+                System.out.println("****** java lambda"+count++);
             }while (count < 10);
         }).start();
     }
