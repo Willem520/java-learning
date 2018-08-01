@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * @author weiyu@gomefinance.com.cn
- * @description
+ * @author weiyu
+ * @description stream操作
  * @create 2018/7/31 16:56
  * @since jdk1.8
  */

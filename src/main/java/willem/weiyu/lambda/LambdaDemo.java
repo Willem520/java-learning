@@ -1,8 +1,8 @@
 package willem.weiyu.lambda;
 
 /**
- * @author weiyu@gomefinance.com.cn
- * @description
+ * @author weiyu
+ * @description lambda表达式
  * @create 2018/7/31 16:50
  * @since jdk1.8
  */
