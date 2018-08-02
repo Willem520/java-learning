@@ -8,7 +8,7 @@ import java.util.Optional;
  * @author weiyu
  * @description Optinal类基本使用
  * @create 2018/8/2 9:45
- * @since 1.0.0
+ * @since jdk1.8
  */
 public class OptionalDemo {
 
