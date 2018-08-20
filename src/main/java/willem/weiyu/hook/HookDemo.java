@@ -2,7 +2,7 @@ package willem.weiyu.hook;
 
 /**
  * @author weiyu
- * @description
+ * @description 钩子方法简单示例
  * @create 2018/8/9 14:06
  * @since 1.0.0
  */
