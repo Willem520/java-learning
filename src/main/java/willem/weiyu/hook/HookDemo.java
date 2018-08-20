@@ -9,9 +9,16 @@ package willem.weiyu.hook;
 public class HookDemo {
 
     public static void main(String[] args) throws InterruptedException {
-        Runtime.getRuntime().addShutdownHook(new Thread(()-> System.out.println("this is a shutdown hook")));
+        Runtime.getRuntime().addShutdownHook(new Thread(()-> {
+            System.out.println("this is a shutdown hook");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }));
         System.out.println("======模拟程序执行");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         System.out.println("hello hook");
     }
 }
