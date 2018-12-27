@@ -1,5 +1,8 @@
 package willem.weiyu.lambda;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author weiyu
  * @description lambda表达式
@@ -7,6 +10,7 @@ package willem.weiyu.lambda;
  * @since jdk1.8
  */
 public class LambdaDemo {
+    private static final Logger LOGGER = LoggerFactory.getLogger(LambdaDemo.class);
 
     public static void main(String[] args) {
         //无lambda表达式时
@@ -14,14 +18,14 @@ public class LambdaDemo {
 
             @Override
             public void run() {
-                System.out.println("****** java without lambda");
+                LOGGER.info("****** java without lambda ******");
             }
         }).start();
 
         new Thread(() ->{
             int count = 0;
             do {
-                System.out.println("****** java lambda"+count++);
+                LOGGER.info("****** java lambda{} ******", count++);
             }while (count < 10);
         }).start();
     }

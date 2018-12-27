@@ -1,5 +1,8 @@
 package willem.weiyu.clazz;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +14,28 @@ import java.util.Optional;
  * @since jdk1.8
  */
 public class OptionalDemo {
+    private static final Logger LOGGER = LoggerFactory.getLogger(OptionalDemo.class);
+
+    private static class Province{
+        private String name;
+        private List<String> cities;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public List<String> getCities() {
+            return cities;
+        }
+
+        public void setCities(List<String> cities) {
+            this.cities = cities;
+        }
+    }
 
     public static void main(String[] args) {
         String str = "hello";
@@ -18,52 +43,31 @@ public class OptionalDemo {
 
         System.out.println("======part1");
         if(str != null){
-            System.out.println(str);
+            LOGGER.info("******{}", str);
         }
 
         System.out.println("======part2");
         if(strValue.isPresent()){
-            System.out.println(strValue.get());
+            LOGGER.info("******{}", strValue.get());
         }
 
         System.out.println("======part3");
-        strValue.ifPresent(s -> System.out.println(s));
+        strValue.ifPresent(System.out::println);
 
         Optional<String> op = Optional.ofNullable(null);
         System.out.println("======part4");
         System.out.println(op.orElse("hahahaha"));
 
         System.out.println("======part5");
-        System.out.println(op.orElseGet(() -> "hehehe"));
+        LOGGER.info("{}", op.orElseGet(() -> "hahaha"));
 
         Optional<String> opt = Optional.ofNullable("nihao");
         System.out.println("======part6");
-        System.out.println(opt.map(m -> m + "123").orElseGet(() -> "world"));
+        LOGGER.info("", opt.map(m -> m + "123").orElse("world"));
 
         System.out.println("======part7");
         Province province = new Province();
         Optional<Province> parentVal = Optional.ofNullable(province);
-        System.out.println(parentVal.map(m -> m.getCities()).orElse(Collections.emptyList()));
-    }
-}
-
-class Province{
-    private String name;
-    private List<String> cities;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<String> getCities() {
-        return cities;
-    }
-
-    public void setCities(List<String> cities) {
-        this.cities = cities;
+        LOGGER.info("{}", parentVal.map(m -> m.getCities()).orElse(Collections.emptyList()));
     }
 }

@@ -1,5 +1,8 @@
 package willem.weiyu.hook;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author weiyu
  * @description 钩子方法简单示例
@@ -7,6 +10,7 @@ package willem.weiyu.hook;
  * @since 1.0.0
  */
 public class HookDemo {
+    private static final Logger log = LoggerFactory.getLogger(HookDemo.class);
 
     public static void main(String[] args) throws InterruptedException {
         Runtime.getRuntime().addShutdownHook(new Thread(()-> {
