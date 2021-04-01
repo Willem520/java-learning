@@ -24,3 +24,7 @@ hs_err_pid*
 /.idea/
 /target/
 /java-learning.iml
+/build/
+/concurrent-learning/build/
+/concurrent-learning/out/
+/feature-learning/build/
