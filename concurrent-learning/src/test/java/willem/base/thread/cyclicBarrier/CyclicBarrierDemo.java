@@ -12,11 +12,12 @@ import java.util.concurrent.CyclicBarrier;
 public class CyclicBarrierDemo {
 
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         int parties = 4;
         CyclicBarrier cyclicBarrier = new CyclicBarrier(parties);
         for (int i=0; i<parties; i++){
             new Thread(new SimpleTaker(cyclicBarrier)).start();
         }
+        Thread.sleep(10000);
     }
 }
