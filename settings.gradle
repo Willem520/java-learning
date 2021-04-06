@@ -4,4 +4,5 @@
 rootProject.name = 'java-learning'
 include 'concurrent-learning'
 include 'feature-learning'
+include 'common-tool'
 

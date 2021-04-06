@@ -37,6 +37,8 @@ subprojects {
     dependencies {
         // 通用依赖
         compile('ch.qos.logback:logback-classic:1.2.3')
+        compile('com.google.guava:guava:23.0')
+        compile('com.alibaba:fastjson:1.2.70')
         implementation('org.projectlombok:lombok:1.18.18')
         // 测试依赖
         testCompile('org.junit.jupiter:junit-jupiter:5.4.2')
