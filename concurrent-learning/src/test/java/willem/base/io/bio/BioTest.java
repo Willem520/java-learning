@@ -9,7 +9,7 @@ import java.util.Random;
  * @create 2018/6/5 14:07
  * @since 1.0.0
  */
-public class BIOTest {
+public class BioTest {
 
     public static void main(String[] args) throws InterruptedException {
         new Thread(()-> {
