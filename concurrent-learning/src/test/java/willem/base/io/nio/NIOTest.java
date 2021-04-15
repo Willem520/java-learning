@@ -13,10 +13,10 @@ public class NIOTest {
     private CountDownLatch latch = new CountDownLatch(1);
 
     public static void main(String[] args) throws Exception {
-        NIOServer.start();
+        NioServer.start();
         //避免客户端先于服务器启动前执行代码
         Thread.sleep(1000);
-        NIOClient.start();
-        while (NIOClient.sendMsg(new Scanner(System.in).nextLine()));
+        NioClient.start();
+        while (NioClient.sendMsg(new Scanner(System.in).nextLine()));
     }
 }
